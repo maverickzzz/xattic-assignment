@@ -1,0 +1,63 @@
+<form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+  <header class="bg-white shadow">
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex justify-between">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Person Detail</h1>
+      <div class="space-x-4">
+        <button
+          type="submit"
+          [disabled]="!personForm.valid"
+          [ngClass]="personForm.valid ? 'bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500' : 'bg-gray-300'"
+          class="inline-flex items-center rounded border border-transparent px-2.5 py-1.5 text-xs font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2">
+          Save
+        </button>
+        <button routerLink="/persons" type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+
+      <div class="space-y-12">
+        <div class="border-b border-gray-900/10 pb-12">
+          <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <div class="sm:col-span-4">
+              <label for="full-name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
+              <div class="mt-2">
+                <input type="text" formControlName="name" id="full-name" autocomplete="given-name"
+                       class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+
+            <div class="sm:col-span-4">
+              <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Date of Birth</label>
+              <div class="mt-2">
+                <input id="date-of-birth" min="1980-01-01" max="2023-12-31" formControlName="birthday" type="date"
+                       autocomplete="date-of-birth"
+                       class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+
+            <div class="sm:col-span-4">
+              <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+              <div class="mt-2">
+                <input id="email" formControlName="email" type="email" autocomplete="email"
+                       class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+
+            <div class="sm:col-span-4">
+              <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Occupation</label>
+              <div class="mt-2">
+                <input id="occupation" formControlName="occupation" type="text" autocomplete="occupation"
+                       class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</form>

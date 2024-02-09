@@ -1,0 +1,29 @@
+<div class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+  <div class="flex flex-1 flex-col p-4">
+    <h3 class="mt-1 text-sm font-medium text-gray-900 cursor-pointer" (click)="onEdit()">{{ person.name }}</h3>
+    <dl class="mt-1 flex flex-grow flex-col justify-between">
+      <dd class="text-sm text-gray-500">{{ person.birthday | age }}</dd>
+      <dd class="text-sm text-gray-500">{{ person.email }}</dd>
+      <dd class="mt-3">
+                <span
+                  class="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800">{{ person.occupation }}</span>
+      </dd>
+    </dl>
+  </div>
+  <div>
+    <div class="-mt-px flex divide-x divide-gray-200">
+      <div class="flex w-0 flex-1">
+        <a (click)="onEdit()"
+           class="cursor-pointer relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500">
+          <span class="ml-3">Edit</span>
+        </a>
+      </div>
+      <div class="-ml-px flex w-0 flex-1">
+        <a (click)="onDelete()"
+           class="cursor-pointer relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500">
+          <span class="ml-3">Delete</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
